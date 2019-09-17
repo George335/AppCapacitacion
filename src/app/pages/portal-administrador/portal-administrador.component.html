@@ -1,0 +1,66 @@
+<!-- CABECERA -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item puntero">
+                <a class="nav-link" (click)="irCapacitaciones(1)">Capacitación <span
+                        class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item puntero">
+                <a class="nav-link" (click)="irCapacitaciones(1)">Conferencias</a>
+            </li>
+            <li class="nav-item puntero">
+                <a class="nav-link" (click)="irCapacitaciones(1)">Foro</a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- CUERPO -->
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="card-group">
+                        <div class="col-10">
+                            <div class="row">
+                                <div class="col-md-4 btn puntero"><a [routerLink]="['/listadoIsos']" class="badge badge-info" style="color:#FFFF;">Ingresar registro de
+                                        capacitación</a></div>
+                                <div class="col-md-4 btn puntero"><a [routerLink]="['/registroUsuario']" class="badge badge-info" style="color:#FFFF;">Ingresar registro de usuario</a>
+                                </div>
+                                <div class="col-md-4 btn puntero"><a class="badge badge-info" style="color:#FFFF;">Ingresar a menú de usuario</a></div>
+                            </div>
+                            <div class="row">
+                                <div class="card-columns m-5 animated fadeIn">
+                                    <div *ngFor="let item of capacitaciones" class="card">
+                                        <img [src]="item.imagen" class="card-img-top" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ item.nombre }}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<!-- PIE -->
+<footer class="footer bg-dark text-center">
+
+    <div class="container">
+        <p>
+            &copy; Hurtado Hermoza Ingenieros Consultores S.A.
+        </p>
+    </div>
+
+</footer>
